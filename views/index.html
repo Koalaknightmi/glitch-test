@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+       <meta name="theme-color" content="#317EFB"/>
+        <title>New Webpage</title>
+       
+    <link rel="stylesheet" href="/style.css">
+    <!-- import the webpage's stylesheet  <script src="https://multiplayer-test2/socket.io/socket.io.js"></script>-->
+    </head>
+  <div id = "html" class = "Carbon">
+  <body>
+    <div class = "kcss-slide-in-right" id = "main-page">
+      <header>
+            <div id = "main-header">
+              <div class="dropdown">
+                <button id = "dropdown-meniu" class="dropbtn"> <i class="material-icons">list</i> </button>
+                <div class="dropdown-content">
+                  <a href="#" class="btn btn-nav kcss-btn kcss-ripple-btn kcss-btn-red" disabled>Credits</a>
+                  <a href="#" class="btn btn-nav kcss-btn kcss-ripple-btn kcss-btn-red" disabled>Inventory</a>
+                  <a href="#" class="btn btn-nav kcss-btn kcss-ripple-btn kcss-btn-red" disabled>Stats</a>
+                  <a href="#" class="btn btn-nav kcss-btn kcss-ripple-btn kcss-btn-red" disabled>Store</a>
+                  <a href="#" class="btn btn-nav kcss-btn kcss-ripple-btn kcss-btn-red" disabled>News</a>
+                  <a href="#leaderboard" class="btn btn-nav kcss-btn kcss-ripple-btn kcss-btn-green">Leaderboard</a>
+                  <a href="#games-main" class="btn btn-nav kcss-btn kcss-ripple-btn kcss-btn-green">Play</a>
+                </div>
+              </div>
+              <div id = "dropdown-meniu2" class="dropdown">
+                <button class="dropbtn"> <i class="material-icons">build</i> </button>
+                <div class="dropdown-content">
+                  <a href="#" class="btn btn-nav kcss-btn kcss-ripple-btn kcss-btn-red" disabled>settings</a>
+                  <a href="#" class="btn btn-nav kcss-btn kcss-ripple-btn kcss-btn-red" disabled>Profile settings</a>
+                </div>
+              </div>
+            </div>
+        </header>
+        <main class = "page kcss-slide-in-right" id = "games-main" >
+            <div id  = "games" class = "Carbonfibre kcss-col-6 kcss-col-m-6">
+              <input label = "search" class = "kcss-lg kcss-search-input " id = "games-search" type="search" onkeyup = "searchtable('games-search','g-table-b',3);"/>
+                <table id = "g-table">
+                    <thead id = "g-table-h">
+                    <tr>
+                        <th>type</th>
+                        <th>creator</th>
+                        <th>map</th>
+                        <th>average rank</th>
+                        <th>players</th>
+                    </tr>
+                    </thead>
+                    <tbody id = "g-table-b">
+                    </tbody>
+                </table>
+          </div>
+            <div id  = "g-info" class = "kcss-col-6 kcss-col-m-6 Carbonfibre">
+              <div>
+              <div style = "width:100%;background:lightgrey;height:50vh;" id = "g-info-img-wrap">
+                <button style = "" id = "join-game-btn" class = "btn kcss-btn kcss-ripple-btn kcss-btn-green">join</button>
+                <button style = "float:right" id = "create-game-btn" class = "btn kcss-btn kcss-ripple-btn kcss-btn-blue">create +</button>
+              <img id = "g-i-img" style = "" src = "https://cdn.glitch.com/20e968ff-97d4-4430-83ad-42189e4f368d%2Fcaedes%20hostis.png?1546473346888" alt = "?"/>
+              </div>
+              <div class = "kcss-col-4 g-i-b" id = "g-i-type">none</div>
+              <div class = "kcss-col-4 g-i-b" id = "g-i-username">no one 2</div>
+              <div class = "kcss-col-4 g-i-b" id = "g-i-map">courtyard </div>  
+              <div class = "kcss-col-6 g-i-b" id = "g-i-ar">recruit</div>
+              <div class = "kcss-col-6 g-i-b" id = "g-i-pnum">0</div>
+              <div class = "kcss-col-12 g-i-b" id = "g-i-plrs">
+                <table id = "g-i-table">
+                    <thead id = "g-i-table-h">
+                    <tr>
+                        <th>username</th>
+                        <th>rank</th>
+                        <th>score</th>
+                    </tr>
+                    </thead>
+                    <tbody id = "g-i-table-b">
+                    </tbody>
+                </table>
+              </div>
+              </div>
+          </div>
+        </main>
+      <main class = "page kcss-slide-in-left" id = "leaderboard">
+          <div id = "leaderboard-body" class = "kcss-col-12 kcss-col-m-12 Carbonfibre">
+                <input label = "search" class = "kcss-lg kcss-search-input " id = "leaderboard-search" type="search" onkeyup = "searchtable('leaderboard-search','l-table-b',3);"/>
+                <table id = "l-table">
+                    <thead id = "l-table-h">
+                    <tr>
+                        <th>place</th>
+                        <th>img</th>
+                        <th>username</th>
+                        <th>score</th>
+                    </tr>
+                    </thead>
+                    <tbody id = "l-table-b">
+                    </tbody>
+                </table>
+          </div>
+      </main>
+            
+      <footer class = "kcss-main-footer"><span class = "kcss-copyright">Copyright &copy; 2018 Koalastrikermi</span></footer><!---->
+    </div>
+    </body>
+  <div class = "container" id = "login-wrapper">
+    <div id = "login">
+        <b>Login</b>
+        <form method = "post" id = "logform">
+        <div id = "username-w">
+            <input name="username" autocomplete="text" type="test" id="username" class="form-control" placeholder="Enter username" required>
+        </div>
+        <div id = "password-w">
+            <input autocomplete="current-password" type="password" name="password" id="password" min="6" max="16" class="form-control" placeholder="Enter password" required>
+        </div>
+        <div id = "warn" style = "background:#FF7373;box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);display:none;padding:5px 54px;margin:;">to short</div>
+        <label>Remember me<input id = "check" type="checkbox" name="remember"></label>
+        <div id="button-loading-bar" style="width:173px;display:none;background:rgb(194, 194, 194);height:5px;overflow-x:none;margin:auto">
+        <div id="button-loading-bar-inner" style="display:;background:rgb(255, 0, 0);height:5px;width:0px;"></div>
+        </div>
+        <button id="login-btn" class="normbtn" type="submit">submit</button>
+        </form>
+        <div id = "register" >
+            <button class = "diffbtn" id = "register-btn">register</button>
+        </div>
+      <img src="https://peat-cheek.glitch.me/counter.png?fallback=MY_WEBSITE&color=black" alt="" style="vertical-align: bottom; display:none;" aria-hidden="true">
+    </div>
+    <div id = "regpage">
+        <b>register</b>
+        <form id = "regform">
+        <div id = "email-w-r">
+            <input name="email" autocomplete="email" type="email" id="email-r" class="form-control" placeholder="Enter email" required>
+        </div>
+        <div id = "warn3" style = "background:#FF7373;box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);display:none;padding:5px 54px;margin:;">to short</div>
+        <div id = "username-w-r">
+            <input name="username" autocomplete="text" type="test" id="username-r" class="form-control" placeholder="Enter username" required>
+        </div>
+        <div id = "password-w-r">
+            <input autocomplete="current-password" type="password" name="password" id="password-r" minlength="6" maxlength="16" class="form-control" placeholder="Enter password" required>
+        </div>
+        <div id = "warn2" style = "background:#FF7373;box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);display:none;padding:5px 54px;margin:;">to short</div>
+        <label>Remember me<input id = "check2" type="checkbox" name="remember"></label>
+        <button id = "regi" class = "normbtn" type = "submit">submit</button>
+        </form>
+        <div id = "back">
+            <button style = "padding:5px 70px;" class = "diffbtn" id = "backbtn">back</button>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</html>
